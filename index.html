@@ -4,20 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Job Lavayen | Portafolio Profesional</title>
-  <meta name="description" content="Portafolio profesional de Job Lavayen, Administrador de Talento y Desarrollo con enfoque en tecnología, IA y automatización en Recursos Humanos." />
+  <meta name="description" content="Portafolio profesional de Job Lavayen. Talento, tecnología, automatización e impacto humano en Recursos Humanos." />
+  <meta name="theme-color" content="#0f172a" />
   <style>
     :root {
-      --bg: #0b1020;
-      --bg-soft: #121935;
-      --card: rgba(18, 25, 53, 0.78);
-      --line: rgba(255,255,255,0.1);
-      --text: #f5f7fb;
-      --muted: #bcc5dd;
-      --accent: #6ee7b7;
-      --accent-2: #60a5fa;
-      --shadow: 0 20px 50px rgba(0,0,0,0.28);
-      --radius: 24px;
-      --max: 1120px;
+      --bg: #f8fafc;
+      --bg-soft: #eef2f7;
+      --surface: #ffffff;
+      --surface-2: #f8fbff;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --brand: #0f172a;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --success: #0f766e;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --max: 1100px;
     }
 
     * { box-sizing: border-box; }
@@ -25,16 +31,18 @@
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(96,165,250,0.18), transparent 30%),
-        radial-gradient(circle at top right, rgba(110,231,183,0.12), transparent 25%),
-        linear-gradient(180deg, #0b1020 0%, #0d1328 100%);
       color: var(--text);
-      line-height: 1.6;
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,.06), transparent 22%),
+        linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    img { display: block; max-width: 100%; }
+    h1,h2,h3,h4,p { margin: 0; }
 
     .container {
       width: min(calc(100% - 32px), var(--max));
@@ -44,112 +52,130 @@
     .nav {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 100;
+      background: rgba(255,255,255,0.82);
       backdrop-filter: blur(14px);
-      background: rgba(11,16,32,0.6);
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid rgba(226,232,240,.9);
     }
 
     .nav-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 14px 0;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 16px;
     }
 
-    .brand {
+    .logo {
       display: flex;
-      flex-direction: column;
-      gap: 2px;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
     }
 
-    .brand strong {
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      letter-spacing: -.04em;
+      box-shadow: var(--shadow);
+      flex: 0 0 auto;
+    }
+
+    .logo-copy {
+      min-width: 0;
+    }
+
+    .logo-copy strong {
+      display: block;
       font-size: 1rem;
-      letter-spacing: 0.02em;
+      line-height: 1.1;
     }
 
-    .brand span {
+    .logo-copy span {
+      display: block;
       color: var(--muted);
-      font-size: 0.85rem;
+      font-size: .88rem;
+      margin-top: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 18px;
       flex-wrap: wrap;
-      font-size: 0.95rem;
       color: var(--muted);
+      font-size: .95rem;
     }
 
-    .nav-links a:hover,
-    .socials a:hover,
-    .btn:hover {
-      opacity: 0.9;
-    }
+    .nav-links a:hover { color: var(--accent); }
 
     .hero {
-      padding: 72px 0 36px;
+      padding: 72px 0 34px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 28px;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 26px;
       align-items: stretch;
     }
 
-    .hero-card,
-    .panel,
-    .timeline-item,
-    .project,
-    .contact-card {
-      background: var(--card);
+    .card {
+      background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: var(--radius-xl);
       box-shadow: var(--shadow);
     }
 
-    .hero-card {
-      padding: 38px;
-      position: relative;
-      overflow: hidden;
+    .hero-main {
+      padding: 40px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,251,255,.98)),
+        radial-gradient(circle at top right, rgba(37,99,235,.08), transparent 24%);
     }
 
-    .badge {
+    .eyebrow {
       display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(110,231,183,0.12);
-      border: 1px solid rgba(110,231,183,0.2);
+      background: var(--accent-soft);
       color: var(--accent);
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 20px;
+      font-size: .9rem;
+      font-weight: 700;
+      margin-bottom: 18px;
     }
-
-    h1, h2, h3, p { margin: 0; }
 
     h1 {
-      font-size: clamp(2.2rem, 4.5vw, 4.3rem);
-      line-height: 1.05;
-      margin-bottom: 16px;
-      letter-spacing: -0.04em;
+      font-size: clamp(2.2rem, 5vw, 4.4rem);
+      line-height: 1.02;
+      letter-spacing: -.05em;
+      max-width: 10ch;
+      margin-bottom: 18px;
     }
 
-    .lead {
-      font-size: 1.08rem;
+    .hero-main p {
+      font-size: 1.05rem;
       color: var(--muted);
-      max-width: 62ch;
+      max-width: 60ch;
     }
 
-    .highlight {
-      color: var(--accent);
-    }
+    .hero-highlight { color: var(--accent); }
 
-    .hero-actions {
+    .actions {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
+      gap: 12px;
       margin-top: 28px;
     }
 
@@ -157,111 +183,126 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
       padding: 14px 18px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
+      border-radius: 14px;
       font-weight: 700;
-      transition: 0.2s ease;
+      border: 1px solid transparent;
+      transition: .2s ease;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #08111f;
-      border: none;
+      background: var(--brand);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #111f3c;
+      transform: translateY(-1px);
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.04);
+      background: white;
+      border-color: var(--line);
       color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-1px);
     }
 
     .hero-side {
       display: grid;
-      gap: 20px;
+      gap: 18px;
     }
 
-    .panel {
+    .side-card {
       padding: 24px;
     }
 
-    .mini-title {
-      font-size: 0.78rem;
+    .label {
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
       color: var(--muted);
       margin-bottom: 12px;
     }
 
-    .impact-grid {
+    .stats {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
+      grid-template-columns: repeat(2,1fr);
+      gap: 12px;
     }
 
     .stat {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.04);
+      padding: 16px;
+      border-radius: 16px;
+      background: var(--surface-2);
       border: 1px solid var(--line);
     }
 
     .stat strong {
       display: block;
-      font-size: 1.75rem;
-      margin-bottom: 6px;
+      font-size: 1.55rem;
+      letter-spacing: -.04em;
+      margin-bottom: 4px;
     }
 
     .stat span {
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: .92rem;
     }
-
-    section {
-      padding: 24px 0;
-    }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: end;
-      margin-bottom: 18px;
-    }
-
-    .section-head h2 {
-      font-size: clamp(1.5rem, 2vw, 2rem);
-      letter-spacing: -0.03em;
-    }
-
-    .section-head p {
-      color: var(--muted);
-      max-width: 60ch;
-    }
-
-    .about {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 22px;
-    }
-
-    .panel p + p { margin-top: 12px; }
 
     .chips {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 16px;
+      margin-top: 8px;
     }
 
     .chip {
-      padding: 10px 14px;
+      padding: 10px 13px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.04);
+      background: var(--surface-2);
       border: 1px solid var(--line);
-      color: var(--text);
-      font-size: 0.92rem;
+      font-size: .92rem;
+      color: #1e293b;
     }
+
+    section {
+      padding: 26px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.55rem, 2vw, 2rem);
+      letter-spacing: -.03em;
+    }
+
+    .section-head p {
+      max-width: 60ch;
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
+    }
+
+    .panel {
+      padding: 28px;
+    }
+
+    .panel p + p { margin-top: 12px; }
 
     .timeline {
       display: grid;
@@ -281,13 +322,13 @@
     }
 
     .timeline-top strong {
+      display: block;
       font-size: 1.08rem;
+      letter-spacing: -.02em;
+      margin-bottom: 4px;
     }
 
-    .timeline-top span,
-    .muted,
-    .timeline-item li,
-    .contact-card p {
+    .meta, .timeline-item li, .timeline-item p, .contact-card p, .footer {
       color: var(--muted);
     }
 
@@ -304,29 +345,38 @@
 
     .project {
       padding: 24px;
-      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     .project h3 {
-      margin: 10px 0 10px;
-      font-size: 1.12rem;
+      font-size: 1.08rem;
+      letter-spacing: -.02em;
     }
 
     .project p {
       color: var(--muted);
-      margin-bottom: 14px;
+      flex: 1;
     }
 
-    .project .chip {
+    .tag {
       display: inline-flex;
-      margin-top: 6px;
+      align-self: flex-start;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #ecfeff;
+      color: var(--success);
+      border: 1px solid #ccfbf1;
+      font-size: .84rem;
+      font-weight: 700;
     }
 
-    .contact {
+    .contact-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
       gap: 18px;
-      margin-bottom: 48px;
+      margin-bottom: 44px;
     }
 
     .contact-card {
@@ -334,123 +384,129 @@
     }
 
     .contact-card a {
-      color: var(--text);
-      font-weight: 700;
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 12px;
+      font-weight: 700;
+      color: var(--brand);
       word-break: break-word;
     }
 
+    .contact-card a:hover { color: var(--accent); }
+
     .footer {
-      padding: 24px 0 40px;
-      color: var(--muted);
+      padding: 10px 0 40px;
       text-align: center;
-      font-size: 0.94rem;
-    }
-
-    .socials {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
-    .socials a {
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
-      font-size: 0.92rem;
+      font-size: .94rem;
     }
 
     @media (max-width: 980px) {
       .hero-grid,
-      .about,
+      .about-grid,
       .projects,
-      .contact {
+      .contact-grid {
         grid-template-columns: 1fr;
       }
+
+      h1 { max-width: 100%; }
     }
 
-    @media (max-width: 640px) {
-      .hero { padding-top: 42px; }
-      .hero-card, .panel, .timeline-item, .project, .contact-card { padding: 20px; }
-      .impact-grid { grid-template-columns: 1fr; }
-      .nav-inner { gap: 12px; align-items: start; flex-direction: column; }
-      .nav-links { gap: 12px; }
+    @media (max-width: 680px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .hero-main,
+      .side-card,
+      .panel,
+      .timeline-item,
+      .project,
+      .contact-card {
+        padding: 20px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <div class="brand">
-        <strong>Job Lavayen</strong>
-        <span>Talento, tecnología e impacto humano</span>
+      <div class="logo">
+        <div class="logo-mark">JL</div>
+        <div class="logo-copy">
+          <strong>Job Lavayen</strong>
+          <span>Administrador de Talento y Desarrollo</span>
+        </div>
       </div>
       <div class="nav-links">
-        <a href="#about">Sobre mí</a>
-        <a href="#experience">Experiencia</a>
-        <a href="#projects">Logros</a>
-        <a href="#contact">Contacto</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#proyectos">Logros</a>
+        <a href="#contacto">Contacto</a>
       </div>
     </div>
   </nav>
 
   <header class="hero">
     <div class="container hero-grid">
-      <div class="hero-card">
-        <div class="badge">Administrador de Talento y Desarrollo · IA en RRHH</div>
-        <h1>Transformo la gestión del talento con <span class="highlight">tecnología, automatización e impacto humano</span>.</h1>
-        <p class="lead">
-          Profesional con trayectoria en Recursos Humanos y una sólida base técnica en infraestructura, cloud y automatización.
-          Mi enfoque combina estrategia, innovación y cercanía con las personas para construir procesos más ágiles, objetivos y sostenibles.
+      <div class="card hero-main">
+        <div class="eyebrow">Talento · Tecnología · Automatización</div>
+        <h1>Transformo <span class="hero-highlight">RRHH</span> en una función más ágil, estratégica y humana.</h1>
+        <p>
+          Profesional con experiencia en gestión del talento, reclutamiento integral y desarrollo organizacional, respaldado por una base sólida en tecnología, cloud y automatización. Mi enfoque conecta negocio, personas e innovación para generar resultados reales.
         </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:lavayenjob@gmail.com">Escribirme</a>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:lavayenjob@gmail.com">Contactar</a>
           <a class="btn btn-secondary" href="https://www.linkedin.com/in/joblavayenc/" target="_blank" rel="noreferrer">Ver LinkedIn</a>
-        </div>
-        <div class="socials">
-          <a href="tel:+59175673874">+591 75673874</a>
-          <a href="mailto:lavayenjob@gmail.com">lavayenjob@gmail.com</a>
-          <a href="https://www.linkedin.com/in/joblavayenc/" target="_blank" rel="noreferrer">linkedin.com/in/joblavayenc</a>
         </div>
       </div>
 
       <div class="hero-side">
-        <div class="panel">
-          <div class="mini-title">Impacto</div>
-          <div class="impact-grid">
+        <div class="card side-card">
+          <div class="label">Impacto profesional</div>
+          <div class="stats">
             <div class="stat">
               <strong>25%</strong>
-              <span>Reducción de tiempos mediante IA y optimización de procesos</span>
+              <span>Reducción de tiempos con IA y mejora de procesos</span>
             </div>
             <div class="stat">
               <strong>+6 años</strong>
-              <span>Experiencia entre tecnología, operaciones y gestión humana</span>
+              <span>Experiencia combinada en tecnología y gestión humana</span>
             </div>
             <div class="stat">
-              <strong>2 mundos</strong>
-              <span>RRHH + tecnología para resolver desafíos con visión integral</span>
+              <strong>End to end</strong>
+              <span>Gestión integral de atracción y selección</span>
             </div>
             <div class="stat">
-              <strong>1 propósito</strong>
-              <span>Ayudar a las personas a crecer y alcanzar objetivos ambiciosos</span>
+              <strong>Propósito</strong>
+              <span>Ayudar a personas y equipos a crecer</span>
             </div>
           </div>
         </div>
 
-        <div class="panel">
-          <div class="mini-title">Fortalezas clave</div>
+        <div class="card side-card">
+          <div class="label">Especialidades</div>
           <div class="chips">
             <span class="chip">Atracción y selección</span>
+            <span class="chip">IA en RRHH</span>
             <span class="chip">Automatización</span>
-            <span class="chip">IA aplicada a RRHH</span>
-            <span class="chip">Cultura y desarrollo</span>
-            <span class="chip">Comunicación interpersonal</span>
-            <span class="chip">Colaboración estratégica</span>
+            <span class="chip">Desarrollo organizacional</span>
+            <span class="chip">Cultura</span>
             <span class="chip">Liderazgo</span>
             <span class="chip">Análisis de procesos</span>
+            <span class="chip">Comunicación interpersonal</span>
           </div>
         </div>
       </div>
@@ -458,197 +514,194 @@
   </header>
 
   <main>
-    <section id="about">
+    <section id="sobre-mi">
       <div class="container">
         <div class="section-head">
           <div>
             <h2>Sobre mí</h2>
           </div>
           <p>
-            Mi propósito es ayudar. Creo en el poder del talento, en los retos grandes y en construir organizaciones más humanas,
-            más eficientes y mejor preparadas para el cambio.
+            Mi razón de ser es ayudar. Disfruto construir soluciones que impulsen el crecimiento de las personas y eleven el impacto de las organizaciones.
           </p>
         </div>
-        <div class="about">
-          <div class="panel">
+
+        <div class="about-grid">
+          <div class="card panel">
             <p>
-              Soy un profesional que une lo técnico con lo humano. Inicié mi carrera en entornos de tecnología, infraestructura y soporte,
-              y hoy aplico esa base para impulsar una gestión del talento más moderna, apoyada en datos, automatización e inteligencia artificial.
+              Soy un profesional que combina sensibilidad humana con visión tecnológica. Mi trayectoria me permitió pasar de entornos técnicos y operativos a una gestión del talento mucho más moderna, donde la automatización, la IA y la mejora continua se convierten en aliados estratégicos.
             </p>
             <p>
-              Me defino como una persona extrovertida, con liderazgo natural y fuerte orientación a resultados. Disfruto asumir objetivos que parecen lejanos
-              y convertirlos en logros concretos mediante enfoque, colaboración y ejecución.
+              Me considero una persona extrovertida, con liderazgo natural y fuerte orientación a resultados. Me motivan los retos grandes, los objetivos exigentes y las oportunidades para transformar procesos tradicionales en experiencias más eficientes y valiosas.
             </p>
             <p>
-              También participo en iniciativas de voluntariado, convencido de que el crecimiento profesional cobra más sentido cuando genera impacto positivo en otros.
+              Además de mi desarrollo profesional, participo en iniciativas de voluntariado, reforzando un principio que guía mi carrera: generar valor ayudando a otros, sin importar quiénes sean.
             </p>
           </div>
-          <div class="panel">
-            <div class="mini-title">Formación y credenciales</div>
-            <p><strong>Licenciatura en Ingeniería en Redes y Telecomunicaciones</strong><br />Universidad Autónoma Gabriel René Moreno</p>
-            <p><strong>Diplomado en Gestión Estratégica de Talento Humano</strong><br />Universidad Privada Domingo Savio</p>
-            <p><strong>Posgrado en planificación y desarrollo de competencias profesionales en educación superior</strong><br />Escuela Militar de Ingeniería</p>
+
+          <div class="card panel">
+            <div class="label">Formación</div>
+            <p><strong>Ingeniería en Redes y Telecomunicaciones</strong><br>Universidad Autónoma Gabriel René Moreno</p>
+            <p><strong>Diplomado en Gestión Estratégica de Talento Humano</strong><br>Universidad Privada Domingo Savio</p>
+            <p><strong>Posgrado en planificación y desarrollo de competencias profesionales en educación superior</strong><br>Escuela Militar de Ingeniería</p>
             <div class="chips">
               <span class="chip">Inglés profesional</span>
               <span class="chip">Portugués básico</span>
               <span class="chip">Negociación</span>
-              <span class="chip">Cloud & Infraestructura</span>
+              <span class="chip">Cloud</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="experience">
+    <section id="experiencia">
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Experiencia destacada</h2>
+            <h2>Experiencia</h2>
           </div>
           <p>
-            Trayectoria construida en tecnología, operaciones y gestión humana, con foco en eficiencia, innovación y experiencia de las personas.
+            Un recorrido que conecta operaciones, tecnología y gestión humana para construir soluciones con visión integral.
           </p>
         </div>
+
         <div class="timeline">
-          <article class="timeline-item">
+          <article class="card timeline-item">
             <div class="timeline-top">
               <div>
                 <strong>Administrador de Talento y Desarrollo · VIVA Bolivia</strong>
-                <div class="muted">enero 2026 – actualidad · Santa Cruz, Bolivia</div>
+                <div class="meta">Enero 2026 – Actualidad · Santa Cruz, Bolivia</div>
               </div>
-              <span>Estrategia de talento y desarrollo</span>
+              <div class="meta">Desarrollo organizacional</div>
             </div>
             <p>
-              Liderando iniciativas orientadas al desarrollo organizacional, evolución cultural y fortalecimiento de la gestión humana con visión estratégica.
+              Enfoque en iniciativas de talento, cultura y evolución organizacional con visión estratégica y humana.
             </p>
           </article>
 
-          <article class="timeline-item">
+          <article class="card timeline-item">
             <div class="timeline-top">
               <div>
                 <strong>Administrador de Atracción y Selección · VIVA Bolivia</strong>
-                <div class="muted">marzo 2023 – enero 2026 · Santa Cruz, Bolivia</div>
+                <div class="meta">Marzo 2023 – Enero 2026 · Santa Cruz, Bolivia</div>
               </div>
-              <span>Reclutamiento end to end</span>
+              <div class="meta">Reclutamiento integral</div>
             </div>
             <ul>
-              <li>Gestión integral de reclutamiento y selección para todas las áreas de la empresa.</li>
+              <li>Responsable del proceso integral de reclutamiento y selección para distintas áreas de la empresa.</li>
               <li>Optimización de procesos con IA, reduciendo tiempos operativos en 25%.</li>
-              <li>Implementación de prácticas anti-sesgos para procesos más objetivos.</li>
-              <li>Automatización de notificaciones para seguimiento de contratos y pasantías.</li>
-              <li>Coordinación con líderes y gerencias para alinear necesidades de talento con resultados del negocio.</li>
+              <li>Incorporación de prácticas anti-sesgos para fortalecer la objetividad en la evaluación.</li>
+              <li>Automatización de seguimientos relacionados con contratos y finalización de pasantías.</li>
+              <li>Trabajo cercano con directores, subdirectores y gerencias para alinear talento con necesidades del negocio.</li>
             </ul>
           </article>
 
-          <article class="timeline-item">
+          <article class="card timeline-item">
             <div class="timeline-top">
               <div>
                 <strong>Cloud Solutions Specialist · DATEC LATAM</strong>
-                <div class="muted">septiembre 2022 – marzo 2023 · Santa Cruz, Bolivia</div>
+                <div class="meta">Septiembre 2022 – Marzo 2023 · Santa Cruz, Bolivia</div>
               </div>
-              <span>Cloud, arquitectura y estrategia</span>
+              <div class="meta">Arquitectura y soluciones cloud</div>
             </div>
             <ul>
-              <li>Diseño, implementación y administración de soluciones cloud on-premise y públicas.</li>
-              <li>Desarrollo de arquitecturas híbridas y propuestas de backup, disaster recovery y herramientas colaborativas.</li>
-              <li>Acompañamiento a gerencia en el desarrollo del plan estratégico de la línea de negocio.</li>
+              <li>Diseño, implementación y administración de soluciones en nube on-premise y pública.</li>
+              <li>Propuesta de soluciones complementarias de backup, disaster recovery, herramientas colaborativas y VPN.</li>
+              <li>Participación junto a gerencia en el desarrollo del plan estratégico de la línea de negocio.</li>
             </ul>
           </article>
 
-          <article class="timeline-item">
+          <article class="card timeline-item">
             <div class="timeline-top">
               <div>
                 <strong>Especialista de Soluciones dCloud / Data Center Operator · DATEC LATAM</strong>
-                <div class="muted">julio 2019 – septiembre 2022 · Bolivia</div>
+                <div class="meta">Julio 2019 – Septiembre 2022 · Bolivia</div>
               </div>
-              <span>Operaciones, automatización y soporte</span>
+              <div class="meta">Operaciones y automatización</div>
             </div>
             <ul>
-              <li>Diseño y gestión de arquitecturas de servidores y soluciones en nube privada.</li>
-              <li>Monitoreo, virtualización, implementación de backup y disaster recovery.</li>
-              <li>Configuración de VPN, WAF y troubleshooting de red para clientes empresariales.</li>
+              <li>Gestión de arquitecturas, monitoreo, virtualización y continuidad operativa.</li>
+              <li>Configuración de VPN, WAF y resolución de incidentes de red para clientes empresariales.</li>
               <li>Top 3 en resolución de incidentes y promotor de la primera base de conocimiento del sistema.</li>
-              <li>Automatización de reportes semanales para la operación del data center.</li>
+              <li>Automatización de reportes semanales para fortalecer la gestión operativa.</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="projects">
+    <section id="proyectos">
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Logros y proyectos de valor</h2>
+            <h2>Logros clave</h2>
           </div>
           <p>
-            Casos que reflejan mi enfoque: resolver problemas reales con mentalidad estratégica, tecnología y orientación a personas.
+            Iniciativas que reflejan mi estilo de trabajo: pensamiento estratégico, ejecución y foco en impacto medible.
           </p>
         </div>
+
         <div class="projects">
-          <article class="project">
-            <div class="mini-title">RRHH + IA</div>
+          <article class="card project">
+            <div class="label">IA aplicada</div>
             <h3>Optimización del reclutamiento</h3>
-            <p>
-              Rediseño de procesos de atracción y selección con apoyo de IA para acelerar tiempos, mejorar consistencia y elevar la capacidad operativa del área.
-            </p>
-            <span class="chip">Impacto medible</span>
+            <p>Integración de herramientas y mejoras de proceso para acelerar tiempos, elevar consistencia y fortalecer la capacidad del equipo.</p>
+            <span class="tag">Impacto medible</span>
           </article>
-          <article class="project">
-            <div class="mini-title">Automatización</div>
-            <h3>Seguimiento proactivo de contratos y pasantías</h3>
-            <p>
-              Implementación de alertas y notificaciones automáticas para reducir riesgos operativos y dar mayor visibilidad a hitos críticos del ciclo laboral.
-            </p>
-            <span class="chip">Eficiencia operativa</span>
+
+          <article class="card project">
+            <div class="label">Automatización</div>
+            <h3>Seguimiento de hitos críticos</h3>
+            <p>Diseño de recordatorios y flujos automáticos para contratos y pasantías, reduciendo fricción operativa y mejorando visibilidad.</p>
+            <span class="tag">Eficiencia operativa</span>
           </article>
-          <article class="project">
-            <div class="mini-title">Cultura de mejora</div>
-            <h3>Procesos más objetivos y colaborativos</h3>
-            <p>
-              Impulso de prácticas anti-sesgos y trabajo cercano con líderes para fortalecer decisiones de talento con una mirada más estratégica y humana.
-            </p>
-            <span class="chip">Liderazgo + cultura</span>
+
+          <article class="card project">
+            <div class="label">Gestión humana</div>
+            <h3>Procesos más objetivos</h3>
+            <p>Impulso de prácticas más estructuradas y colaborativas para tomar mejores decisiones de talento con una mirada estratégica y humana.</p>
+            <span class="tag">Cultura y liderazgo</span>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contacto">
       <div class="container">
         <div class="section-head">
           <div>
             <h2>Contacto</h2>
           </div>
           <p>
-            Abierto a conectar con personas, equipos y organizaciones que quieran construir una gestión del talento más moderna, ágil y humana.
+            Disponible para conectar con organizaciones, líderes y profesionales interesados en talento, innovación y transformación.
           </p>
         </div>
-        <div class="contact">
-          <div class="contact-card">
-            <div class="mini-title">Correo</div>
-            <p>Para oportunidades, colaboraciones o networking profesional.</p>
+
+        <div class="contact-grid">
+          <article class="card contact-card">
+            <div class="label">Correo</div>
+            <p>Consultas profesionales, colaboraciones y networking.</p>
             <a href="mailto:lavayenjob@gmail.com">lavayenjob@gmail.com</a>
-          </div>
-          <div class="contact-card">
-            <div class="mini-title">Teléfono</div>
-            <p>Disponible para contacto directo y conversaciones profesionales.</p>
-            <a href="tel:+59175673874">+591 75673874</a>
-          </div>
-          <div class="contact-card">
-            <div class="mini-title">LinkedIn</div>
-            <p>Mi perfil profesional y actualización constante de mi marca personal.</p>
+          </article>
+
+          <article class="card contact-card">
+            <div class="label">Teléfono</div>
+            <p>Contacto directo para oportunidades y conversaciones estratégicas.</p>
+            <a href="https://wa.me/+59168926106">68926106</a>
+          </article>
+
+          <article class="card contact-card">
+            <div class="label">LinkedIn</div>
+            <p>Perfil profesional y marca personal.</p>
             <a href="https://www.linkedin.com/in/joblavayenc/" target="_blank" rel="noreferrer">linkedin.com/in/joblavayenc</a>
-          </div>
+          </article>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      Diseñado para presentar una marca personal moderna, profesional y accesible desde internet.
-    </div>
+    <div class="container">Powered by IA</div>
   </footer>
 </body>
 </html>
